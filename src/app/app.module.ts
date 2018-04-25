@@ -12,6 +12,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { GeneralDahboardComponent } from './_pages/general-dahboard/general-dahboard.component';
 import { JoinSchoolComponent } from './_pages/general_pages/join-school/join-school.component';
 import { EmailValidator } from '../assets/validators';
+import { HttpModule } from '@angular/http';
+import { ConfigService } from './_services/config/config.service';
 
 
 @NgModule({
@@ -24,12 +26,13 @@ import { EmailValidator } from '../assets/validators';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule,
     Router,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [EmailValidator],
+  providers: [EmailValidator,ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
