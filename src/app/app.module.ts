@@ -27,7 +27,8 @@ import { EmailValidator } from '../assets/validators';
     RouterModule,
     Router,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [EmailValidator],
   bootstrap: [AppComponent]

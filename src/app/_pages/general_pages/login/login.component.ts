@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
 import { EmailValidator } from '../../../../assets/validators';
 
 @Component({
@@ -8,14 +8,16 @@ import { EmailValidator } from '../../../../assets/validators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  image="assets/images/logo.png";
 
   public loginForm: FormGroup;
   constructor(private fb: FormBuilder) {
-    this.loginForm = fb.group(
+    // this.image="/src/assets/images/logo.png";
+    this.loginForm = this.fb.group(
       {
 
         userName: ['', Validators.compose([Validators.required, EmailValidator.validate, Validators.minLength(4)])],
-        password: ['', Validators.required]
+        password: ['', Validators.compose([Validators.required])]
 
       });
 
