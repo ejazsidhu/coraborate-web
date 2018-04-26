@@ -1,18 +1,31 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+// import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/operator/map';
+// import * as $ from 'jquery';
 @Injectable()
-export class ConfigService implements OnInit {
+export class ConfigService  {
 
   public ip: 'http://www.cricdreamteam.com';
   public port = '';
   public api = 'api/CoraborateWebAPI';
-  public API_KEY = 'X-SF4_?4$';
+  public API_KEY = "X-SF4_?4$";
 
-  constructor() { }
+  constructor(private http: Http) { }
 
 
-  ngOnInit() {
-
+  getUser() {
+     debugger;
+     console.log("service body");
+    // let headers = new HttpHeaders();
+    // headers=headers.set('api_key','X-SF4_?4$');
+    // // headers.set ()
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('API_KEY',this.API_KEY.toString());
+   
+    
+    let url = "http://www.cricdreamteam.com/api/CoraborateWebAPI/GetAllClassess?userId=54"
+    return this.http.get(url,{headers:headers}).map((res:Response) => res.json());
   }
 
   urlBuilder(controlerAction) {
