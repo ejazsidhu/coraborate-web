@@ -1,25 +1,78 @@
- <!-- Side Navbar -->
- <nav class="side-navbar">
-    <div class="side-navbar-wrapper">
-      <!-- Sidebar Header    -->
-      <div class="sidenav-header d-flex align-items-center justify-content-center" style="background: #F76148">
-        <!-- User Info-->
-        <div class="sidenav-header-inner text-center" >
-          <img src="assets/Images/Caraborate.png" alt="" style="width: 150px;height: 100px; text-align: center">
-          <!-- <img src="assets/img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle"> -->
-          <!-- <h2 class="h5">Anderson Hardy</h2><span>Web Developer</span> -->
-        </div>
-        <!-- Small Brand information, appears on minimized sidebar-->
-        <div class="sidenav-header-logo">
-          <!--        <strong>B</strong><strong class="text-primary">D</strong> -->
-          <a href="index.html" class="brand-small text-center">  <img src="assets/Images/withoutTexLogo.png" alt="" style="width: 50px;height: 50px"> </a>
-        
-        </div>
+<!-- Side Navbar -->
+<nav class="side-navbar">
+  <div class="side-navbar-wrapper">
+    <!-- Sidebar Header    -->
+    <div class="sidenav-header d-flex align-items-center justify-content-center" style="background: #F76148">
+      <!-- User Info-->
+      <div class="sidenav-header-inner text-center">
+        <img src="assets/Images/Caraborate.png" alt="" style="width: 150px;height: 100px; text-align: center">
+        <!-- <img src="assets/img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle"> -->
+        <!-- <h2 class="h5">Anderson Hardy</h2><span>Web Developer</span> -->
       </div>
-      <!-- Sidebar Navigation Menus-->
-      <div class="main-menu">
-        <!-- <h5 class="sidenav-heading">Main</h5> -->
-        <ul id="side-main-menu" class="side-menu list-unstyled">                  
+      <!-- Small Brand information, appears on minimized sidebar-->
+      <div class="sidenav-header-logo">
+        <!--        <strong>B</strong><strong class="text-primary">D</strong> -->
+        <a href="index.html" class="brand-small text-center">
+          <img src="assets/Images/withoutTexLogo.png" alt="" style="width: 50px;height: 50px"> </a>
+
+      </div>
+    </div>
+    <!-- Sidebar Navigation Menus-->
+    <div class="main-menu">
+      <br>
+
+      <ul *ngIf="ClassView" id="side-main-menu" class="side-menu list-unstyled">
+        <li class="header">
+          <b>CREATED CLASSES</b>
+
+
+          <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus" style="margin-left: 50px; color:gray"></i>
+        </li>
+
+        <li  class="active">
+
+          <a href="/app/Message/39">
+            <i class="">
+              <span>
+                <img src="../Content/Images/tech.svg" style="width: 26px;border-radius: 50%;">
+              </span>
+            </i>
+            <span>123 39 </span>
+          </a>
+        </li>
+        <li  routerLinkActive="active" *ngFor="let item of ClassView.OwnClassess">
+          <a class="">
+            <i>
+              <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
+            </i>
+            {{item.OwnClassName}}
+            <!-- {{item.OwnClassName}} {{item.OwnClassId}} -->
+          </a>
+
+        </li>
+
+      </ul>
+
+      <ul *ngIf="ClassView" id="side-main-menu" class="side-menu list-unstyled">
+        <li class="header">
+
+          <b>JOINED CLASSES</b>
+          <i data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus" style="margin-left: 65px; color:gray"></i>
+        </li>
+        <li routerLinkActive="active" *ngFor="let item of ClassView.JoinClassess">
+          <a class="">
+            <i>
+              <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
+            </i>
+            {{item.JoinClassName}}
+            <!-- {{item.JoinClassName}} {{item.JoinClassId}} -->
+          </a>
+
+        </li>
+
+      </ul>
+      <!-- <h5 class="sidenav-heading">Main</h5> -->
+      <!-- <ul id="side-main-menu" class="side-menu list-unstyled">                  
           <li><a href="index.html"> <i class="icon-home"></i>Home                             </a></li>
           <li><a href="forms.html"> <i class="icon-form"></i>Forms                             </a></li>
           <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts                             </a></li>
@@ -34,9 +87,9 @@
           <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page                             </a></li>
           <li> <a href="#"> <i class="icon-mail"></i>Demo
               <div class="badge badge-warning">6 New</div></a></li>
-        </ul>
-      </div>
-      <div class="admin-menu">
+        </ul> -->
+    </div>
+    <!-- <div class="admin-menu">
         <h5 class="sidenav-heading">Second menu</h5>
         <ul id="side-admin-menu" class="side-menu list-unstyled"> 
           <li> <a href="#"> <i class="icon-screen"> </i>Demo</a></li>
@@ -45,24 +98,32 @@
           <li> <a href=""> <i class="icon-flask"> </i>Demo</a></li>
           <li> <a href=""> <i class="icon-picture"> </i>Demo</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="page">
-    <!-- navbar-->
-    <header class="header">
-      <nav class="navbar" style="background: fff">
-        <div class="container-fluid">
-          <div class="navbar-holder d-flex align-items-center justify-content-between">
-            <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
-                <div class="brand-text d-none d-md-inline-block">
-                  <!-- <span>Bootstrap </span><strong class="text-primary">Dashboard</strong> -->
-                </div>
-                </a>
-                </div>
-            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-              <!-- Notifications dropdown-->
-              <!-- <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
+      </div> -->
+  </div>
+</nav>
+<div class="page">
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar" style="height: 65px;background: fff;">
+      <div class="container-fluid">
+        <div class="navbar-holder d-flex align-items-center justify-content-between">
+          <div class="navbar-header">
+            <a style="background-color: transparent" id="toggle-btn" href="#" class="menu-btn">
+              <i style="
+              color:  black;
+              font-size: 25px;
+              font-weight:  bold;
+          " class="fas fa-bars"> </i>
+            </a>
+            <a href="index.html" class="navbar-brand">
+              <div class="brand-text d-none d-md-inline-block">
+                <!-- <span>Bootstrap </span><strong class="text-primary">Dashboard</strong> -->
+              </div>
+            </a>
+          </div>
+          <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+            <!-- Notifications dropdown-->
+            <!-- <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
                 <ul aria-labelledby="notifications" class="dropdown-menu">
                   <li><a rel="nofollow" href="#" class="dropdown-item"> 
                       <div class="notification d-flex justify-content-between">
@@ -87,8 +148,8 @@
                   <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
                 </ul>
               </li> -->
-              <!-- Messages dropdown-->
-              <!-- <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
+            <!-- Messages dropdown-->
+            <!-- <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
                 <ul aria-labelledby="notifications" class="dropdown-menu">
                   <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
                       <div class="msg-profile"> <img src="assets/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
@@ -108,19 +169,311 @@
                   <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
                 </ul>
               </li> -->
-              <!-- Languages dropdown    -->
-              <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="assets/img/avatar-1.jpg" style="width:50px ;height: 50px;" alt="English" class="img-fluid rounded-circle"><span class="d-none d-sm-inline-block">M. Ejaz ur Rahman</span></a>
-                <ul aria-labelledby="languages" class="dropdown-menu">
-                  <!-- <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="assets/img/flags/16/DE.png" alt="English" class="mr-2"><span>German</span></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="assets/img/flags/16/FR.png" alt="English" class="mr-2"><span>French                                                         </span></a></li> -->
+            <!-- Languages dropdown    -->
+            <li class="nav-item dropdown">
+              <!-- <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                class="nav-link language dropdown-toggle"> -->
+              <img src="assets/img/avatar-1.jpg" style="width:50px ;height: 50px;" alt="English" class="img-fluid rounded-circle">
+              <span class="d-none d-sm-inline-block">{{ClassView.UserName}}</span>
+              <!-- </a> -->
+
+              <li class="nav-item dropdown">
+                <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  class="nav-link">
+                  <i class="fa fa-sort-desc fa-2x" aria-hidden="true"></i>
+                </a>
+                <ul aria-labelledby="notifications" class="dropdown-menu unrLine">
+                  <!-- <ul class="dropdown-menu unrLine"> -->
+                  <!-- 
+                        <li class="dropdown-item d-flex" routerLinkActive="active" style="padding: 0px">
+                            <a routerLink="Profile" class="profileExpand">
+                                <i class="fa fa-fw fa-user"></i> Profile 
+                            </a>
+                            
+                              
+                        </li> -->
+                  <li class="dropdown-item d-flex" style="padding: 0px">
+                    <a class="test" tabindex="-1">
+                      <i class="fa fa-fw fa-user"></i>Profile
+                      <i style="margin-left: 35px" class="fa fa-angle-right"></i>
+                    </a>
+                    <ul class="dropdown-menu unrLine" style="right: 212px !important; top: 0px; display: none;">
+                      <li routerLinkActive="active">
+                        <a >
+                          <i class="fa fa-fw fa-download"></i> Download Record
+                        </a>
+                      </li>
+
+                      <li routerLinkActive="active">
+                          <a>
+                              <i class="fa fa-fw fa-ban"></i> Block user
+                          </a>
+                      </li>
+                      <li routerLinkActive="active">
+                          <a routerLink="OrganizeClasses">
+                              <i class="fa fa-fw fa-calendar"></i> Organize Classes
+                          </a>
+                      </li>
+
+
+
+                      <li class="dropdown-submenu">
+                        <a class="test" href="#">Another dropdown
+                          <span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="#">3rd level dropdown</a>
+                          </li>
+                          <li>
+                            <a href="#">3rd level dropdown</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-item d-flex" routerLinkActive="active" style="padding: 0px">
+                    <a routerLink="Password">
+                      <i class="fa fa-lock" aria-hidden="true"></i> Password
+                    </a>
+                  </li>
+                  <li class="dropdown-item d-flex" routerLinkActive="active" style="padding: 0px">
+                    <a routerLink="ForgetPassword">
+                      <i class="fa fa-fw fa-gears"></i> Forget Password
+                    </a>
+                  </li>
+                  <li routerLinkActive="active" class="dropdown-item d-flex"  style="padding: 0px">
+                    <a routerLink="Help">
+                      <i class="fa fa-fw fa-info-circle"></i> Help Center
+                    </a>
+                  </li>
+                  <li routerLinkActive="active" class="dropdown-item d-flex" style="border-bottom: 0px solid !important; padding: 0px;">
+                    <a>
+                      <i class="fa fa-fw fa-power-off"></i>Log out
+                    </a>
+                  </li>
+                  <!-- </ul> -->
+                  <!-- <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                      <div class="msg-profile"> <img src="assets/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                      <div class="msg-body">
+                        <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                      </div></a></li>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                      <div class="msg-profile"> <img src="assets/img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                      <div class="msg-body">
+                        <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                      </div></a></li>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                      <div class="msg-profile"> <img src="assets/img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                      <div class="msg-body">
+                        <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                      </div></a></li>
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li> -->
                 </ul>
+                <!-- <ul>
+                  <li>ibrahim</li>
+                </ul> -->
               </li>
+              <!-- </li> -->
               <!-- Log out-->
               <!-- <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li> -->
-            </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+
+  <div class="modal" id="CreateClass" role="dialog">
+    <div class="modal-dialog" style="background-color:white">
+      <div id="popupModelOuter" style="height: 857px!important;">
+        <div data-dismiss="modal" id="close">X</div>
+        <br />
+        <br />
+        <p style="text-align:center;">
+          <img src="assets/Images/create-class.png" style="width:440px;" />
+        </p>
+        <br />
+        <h3 style="text-align: center;">Create a class</h3>
+        <div class="popupModelInner" style="top: 40%!important;">
+          <div class="form-horizontal">
+            <input type="hidden" name="IconValue" id="IconValue" value="" />
+            <div class="form-group">
+              <p style="margin: 0px 12px 10px !important;">Choose Class Icon</p>
+              <select id="IconDropdown" class="IconDropdown" name="department">
+                <option value="-1">options</option>
+                <option value="literature" class="flag classIconDDImg">
+                  <option>
+              </select>
+              <dl id="IconDropdown" class="IconDropdown">
+                <dt>
+                  <a>
+                    <span>Please select Class Icon</span>
+                  </a>
+                </dt>
+                <dd>
+                  <ul>
+                    <li>
+                      <a id="onLoadImg">
+                        <img class="flag classIconDDImg" src="assets//Images/ClassIcons/art.svg" />
+                        <span class="value">art</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/geometry.svg" />
+                        <span class="value">geometry</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/literature.svg" />
+                        <span class="value">literature</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/reading.svg" />
+                        <span class="value">reading</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/soccer.svg" />
+                        <span class="value">soccer</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/stats.svg" />
+                        <span class="value">stats</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/track.svg" />
+                        <span class="value">track</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/writing.svg" />
+                        <span class="value">writing</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/soccer.svg" />
+                        <span class="value">soccer</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/stats.svg" />
+                        <span class="value">stats</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/track.svg" />
+                        <span class="value">track</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img class="flag classIconDDImg" src="assets/Images/ClassIcons/writing.svg" />
+                        <span class="value">writing</span>
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" [(ngModel)]="Name" class="form-control logOnTexboxStyle showCode" placeholder="Class name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon" style="border-bottom: 2px solid #c5c5c5!important;border: 0px !important;">
+                  <i class="fa fa-fw fa-at" style="font-size:21px;"></i>
+                </div>
+                <input type="text" [(ngModel)]="code" class="form-control pull-right hideOrShow logOnTexboxStyle" style="background-color: white !important;"
+                  placeholder="Class Code" />
+              </div>
+            </div>
+            <br />
+            <div class="form-group">
+              <div class="col-md-12">
+                <p style="text-align:center;">
+                  <input type="submit" (click)="CreateClass(Name)" value="CREATE NOW" id="button" class="getIconValue" />
+                </p>
+              </div>
+            </div>
+            <br />
+            <p style="text-align:center;">
+              Looking for a class?
+              <a style="color:#fa654e">Join a class</a>
+            </p>
           </div>
         </div>
-      </nav>
-    </header>
-   
+      </div>
+    </div>
   </div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="modal" id="ClassesJoined" role="dialog">
+  <div class="modal-dialog" style="background-color:white">
+
+    <div id="popupModelOuter">
+      <div id="close">X</div>
+      <br />
+      <br />
+      <p style="text-align:center;">
+        <img src="assets/Images/join -class.png" style="width:440px;" />
+      </p>
+      <br />
+      <h3 style="text-align: center;">Join a class</h3>
+      <p style="text-align: center;">Enter your class code</p>
+      <div class="popupModelInner" style="top: 57%!important;">
+        <div class="form-horizontal">
+          <!-- <div class="form-group"> -->
+
+          <div class="form-group-material">
+            <!-- <input formControlName=userName id="userName" type="text" name="userName" class="input-material " [ngClass]="{'is-invalid ': (!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched )}"> -->
+            <label for="userName" class="label-material">userName</label>
+          </div>
+
+          <div class="col-md-12">
+            <input type="text" [(ngModel)]="ClassCode" class="form-control logOnTexboxStyle" placeholder="Class code" />
+          </div>
+          <!-- </div> -->
+          <br />
+          <div class="form-group">
+            <div class="col-md-12">
+              <p style="text-align:center;">
+                <input type="submit" (click)="JoinClass(ClassCode)" value="JOIN NOW" id="button" />
+              </p>
+            </div>
+          </div>
+          <br />
+          <p style="text-align:center;">
+            Do you wanna?
+            <a data-toggle="modal" data-target="#CreateClass" style="color:#fa654e">Create a class</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

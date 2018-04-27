@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./_pages/general_pages/login/login.component";
 import { ModuleWithProviders } from "@angular/core";
+import { PasswordComponent } from "./_pages/general-dahboard/password/password.component";
 
 export const routes:Routes=[
 
@@ -10,7 +11,9 @@ export const routes:Routes=[
         pathMatch: 'full'
     },
 
-    { path: 'login', component: LoginComponent }
+    
+    { path: 'login', component: LoginComponent },
+    { path:'Password',component:PasswordComponent}
     // { path: '**', component: PageNotFoundComponent },
 
 
