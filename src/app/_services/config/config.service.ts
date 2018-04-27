@@ -20,7 +20,7 @@ export class ConfigService  {
     // let headers = new HttpHeaders();
     // headers=headers.set('api_key','X-SF4_?4$');
     // // headers.set ()
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers();
     headers.append('API_KEY',this.API_KEY.toString());
    
     
