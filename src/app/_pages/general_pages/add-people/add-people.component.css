@@ -1,0 +1,11 @@
+tr.student{
+    border-spacing: 5px;
+    background: #ffffff;
+    
+} 
+td >span{
+
+    padding-top:20px;
+    font-size:22px;
+    /* /vertical-align:center */
+}  

@@ -14,9 +14,10 @@ import { GeneralDahboardComponent } from './_pages/general-dahboard/general-dahb
 import { JoinSchoolComponent } from './_pages/general_pages/join-school/join-school.component';
 import { EmailValidator } from '../assets/validators';
 import { HttpClientModule } from '@angular/common/http';
-import * as $ from 'jquery';
+
 
 import { ConfigService } from './_services/config/config.service';
+import { AddPeopleComponent } from './_pages/general_pages/add-people/add-people.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ConfigService } from './_services/config/config.service';
     NavbarComponent,
     LoginComponent,
     GeneralDahboardComponent,
-    JoinSchoolComponent
+    JoinSchoolComponent,
+    AddPeopleComponent
   ],
   imports: [
     BrowserModule,
