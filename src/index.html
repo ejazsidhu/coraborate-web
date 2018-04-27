@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="assets/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="assets/css/custom.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
      <!-- Compiled and minified CSS
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
@@ -47,13 +48,16 @@
    <!-- <script src="assets/js/charts-home.js"></script> -->
    <!-- Main File-->
    <script src="assets/js/front.js"></script>
-
-   <!-- <script>
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://www.cricdreamteam.com/api/CoraborateWebAPI/GetAllClassess?userId=54", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.setRequestHeader("API_KEY","X-SF4_?4$");
-    xhr.send();
-  </script> -->
+   
+   
+   
+   <script> $(document).ready(function()
+   {
+  
+     
+     $('.dropdown-item a.test').click( function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); });
+    // $('.dropdown-item a.test').mouseout( function(e){ $(this).next('ul').hide(); e.stopPropagation(); e.preventDefault(); });     
+    });
+     </script>
 </body>
 </html>
