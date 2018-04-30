@@ -29,7 +29,7 @@
           <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus" style="margin-left: 50px; color:gray"></i>
         </li>
 
-        <li  class="active">
+        <li class="active">
 
           <a href="/app/Message/39">
             <i class="">
@@ -40,7 +40,7 @@
             <span>123 39 </span>
           </a>
         </li>
-        <li  routerLinkActive="active" *ngFor="let item of ClassView.OwnClassess">
+        <li routerLinkActive="active" *ngFor="let item of ClassView.OwnClassess">
           <a class="">
             <i>
               <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
@@ -192,6 +192,43 @@
                             
                               
                         </li> -->
+
+
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
+                    <ul class="dropdown-menu">
+                       <li class="dropdown-item" routerLinkActive="active">
+                        <a>
+                          <i class="fa fa-fw fa-download"></i> <span id="line">.</span> Download Record
+                        </a>
+                      </li>
+
+                      <li class="dropdown-item" routerLinkActive="active">
+                        <a>
+                          <i class="fa fa-fw fa-ban"></i> Block user
+                        </a>
+                      </li>
+                      <li class="dropdown-item" routerLinkActive="active">
+                        <a routerLink="OrganizeClasses">
+                          <i class="fa fa-fw fa-calendar"></i> Organize Classes
+                        </a>
+                      </li>
+                      <li class="dropdown-item" routerLinkActive="active">
+                        <a routerLink="Password">
+                          <i class="fa fa-lock" aria-hidden="true"></i> Password
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+
+
+
+
+
+
+
+
                   <li class="dropdown-item d-flex" style="padding: 0px">
                     <a class="test" tabindex="-1">
                       <i class="fa fa-fw fa-user"></i>Profile
@@ -199,20 +236,20 @@
                     </a>
                     <ul class="dropdown-menu unrLine" style="right: 212px !important; top: 0px; display: none;">
                       <li routerLinkActive="active">
-                        <a >
+                        <a>
                           <i class="fa fa-fw fa-download"></i> Download Record
                         </a>
                       </li>
 
                       <li routerLinkActive="active">
-                          <a>
-                              <i class="fa fa-fw fa-ban"></i> Block user
-                          </a>
+                        <a>
+                          <i class="fa fa-fw fa-ban"></i> Block user
+                        </a>
                       </li>
                       <li routerLinkActive="active">
-                          <a routerLink="OrganizeClasses">
-                              <i class="fa fa-fw fa-calendar"></i> Organize Classes
-                          </a>
+                        <a routerLink="OrganizeClasses">
+                          <i class="fa fa-fw fa-calendar"></i> Organize Classes
+                        </a>
                       </li>
 
 
@@ -242,7 +279,7 @@
                       <i class="fa fa-fw fa-gears"></i> Forget Password
                     </a>
                   </li>
-                  <li routerLinkActive="active" class="dropdown-item d-flex"  style="padding: 0px">
+                  <li routerLinkActive="active" class="dropdown-item d-flex" style="padding: 0px">
                     <a routerLink="Help">
                       <i class="fa fa-fw fa-info-circle"></i> Help Center
                     </a>

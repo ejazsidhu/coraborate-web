@@ -81,7 +81,7 @@ table {
 }
 
 .badge.badge-primary {
-  background: #33b35a;
+  background:darkgrey;
 }
 
 .page {
@@ -252,12 +252,15 @@ nav.navbar .dropdown-menu {
   right: 0;
   left: auto;
   float: left;
-  margin-top: 16px;
+  margin-top: 6px;
   margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+/*   padding-top: 0;
+  padding-bottom: 0; */
   font-size: 1rem;
-  padding: 1rem;
+/*   padding: 1rem; */
+  box-shadow: 1px 8px 10px lightgrey;
+  width: 247px;
+  border-top: 0px;
 }
 
 nav.navbar .dropdown-menu .dropdown-item {
@@ -287,7 +290,7 @@ nav.navbar .dropdown-menu .dropdown-item span {
 }
 
 nav.navbar .dropdown-menu .dropdown-item i {
-  margin-right: 5px;
+  margin-right: 35px;
 }
 
 nav.navbar .msg-body span,
@@ -335,7 +338,7 @@ nav.navbar a.menu-btn:hover {
 @media (max-width: 575px) {
   nav.navbar .dropdown-menu {
     width: auto;
-    right: -40px;
+    right: 5px;
   }
   nav.navbar .notification {
     -webkit-box-orient: vertical;
@@ -892,7 +895,7 @@ nav.navbar a.menu-btn:hover {
 }
 
 .statistics .user-activity .progress .progress-bar.bg-primary {
-  background: #33b35a !important;
+  background:darkgrey !important;
 }
 
 .statistics .user-activity .page-statistics {
@@ -902,7 +905,7 @@ nav.navbar a.menu-btn:hover {
 .statistics .user-activity .page-statistics strong {
   display: block;
   text-transform: uppercase;
-  color: #33b35a;
+  color: darkgrey ;
   font-size: 2em;
 }
 
