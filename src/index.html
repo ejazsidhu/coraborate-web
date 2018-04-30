@@ -54,10 +54,14 @@
    {
   
      
-     $('.dropdown-item a.test').click( function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); });
+     $('.dropdown-item a.test').hover( function(e){$(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); });
     // $('.dropdown-item a.test').mouseout( function(e){ $(this).next('ul').hide(); e.stopPropagation(); e.preventDefault(); });     
     });
+    
+
+
      </script>
+
 
 </body>
 </html>
