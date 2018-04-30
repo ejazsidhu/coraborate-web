@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmailValidator } from '../../../../assets/validators/email.validator';
 
+
 @Component({
   selector: 'app-add-people',
   templateUrl: './add-people.component.html',
@@ -38,5 +39,18 @@ export class AddPeopleComponent implements OnInit {
 
   deleteFieldValue(index) {
     this.fieldArray.splice(index, 1);
+  }
+
+  getRowIndex(m){
+    // var newNode = document.createElement("td");
+    // var parentDiv = document.getElementById(m);
+    // parentDiv.insertBefore(newNode, );
+    console.log(m);
+    let key='myRow'+m;
+    let row=document.getElementById(m);
+    // let x=row.insertBefore('<td id="two"><input type="text"  name="studentName" class="input-material " /></td>',-2)
+    let x = row.insertAdjacentHTML('beforeend','<td id="two"><input type="text"  name="studentName" class="input-material " /></td>')
+   
+   
   }
 }
