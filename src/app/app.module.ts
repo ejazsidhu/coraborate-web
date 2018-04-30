@@ -33,10 +33,14 @@ import { NavbarService } from './_pages/general_pages/navbar/navbar.service';
     GeneralDahboardComponent,
     JoinSchoolComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     AddPeopleComponent
 =======
     PasswordComponent
 >>>>>>> 242b25f... 90 % dropdown done
+=======
+  
+>>>>>>> 4b2899a... 90 % dropdown done
   ],
   imports: [
     BrowserModule,
