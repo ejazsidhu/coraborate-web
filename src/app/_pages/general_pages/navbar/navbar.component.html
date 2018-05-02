@@ -104,7 +104,7 @@
 <div class="page">
   <!-- navbar-->
   <header class="header">
-    <nav class="navbar" style="height: 65px;background: fff;">
+    <nav class="navbar" style="height: 85px;background: fff;">
       <div class="container-fluid">
         <div class="navbar-holder d-flex align-items-center justify-content-between">
           <div class="navbar-header">
@@ -117,7 +117,7 @@
             </a>
             <a href="index.html" class="navbar-brand">
               <div class="brand-text d-none d-md-inline-block">
-                <!-- <span>Bootstrap </span><strong class="text-primary">Dashboard</strong> -->
+               
               </div>
             </a>
           </div>
@@ -170,36 +170,30 @@
                 </ul>
               </li> -->
             <!-- Languages dropdown    -->
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="width: 210px;">
               <!-- <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link language dropdown-toggle"> -->
-              <img src="assets/img/avatar-1.jpg" style="width:50px ;height: 50px;" alt="English" class="img-fluid rounded-circle">
-              <span class="d-none d-sm-inline-block">{{ClassView.UserName}}</span>
+
+              <img src="assets/img/avatar-1.jpg" style="width:64px ;height: 64px; position: relative; top: 12px;" alt="English" class="img-fluid rounded-circle">
+            <span style="color: #8e8e8e; margin-left: 10px; font-family: Montserrat;">Good Afternoon,</span>  
+              <div style="margin-left: 79px; position: relative; top: -26px;font-family: Montserrat; font-weight: bold;">Mr.Usman Shah</div>
+              
+              <!-- {{ClassView.UserName}} -->
               <!-- </a> -->
 
               <li class="nav-item dropdown">
                 <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                   class="nav-link">
-                  <i class="fa fa-sort-desc fa-2x" aria-hidden="true"></i>
+                  <i class="fa fa-sort-desc fa-2x" style="color: black;" aria-hidden="true"></i>
                 </a>
                 <ul aria-labelledby="notifications" class="dropdown-menu unrLine">
-                  <!-- <ul class="dropdown-menu unrLine"> -->
-                  <!-- 
-                        <li class="dropdown-item d-flex" routerLinkActive="active" style="padding: 0px">
-                            <a routerLink="Profile" class="profileExpand">
-                                <i class="fa fa-fw fa-user"></i> Profile 
-                            </a>
-                            
-                              
-                        </li> -->
-
-
+                
                   <li class="dropdown-submenu">
-                    <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
+                   <a class="dropdown-item" style="border-top: 0px !important" tabindex="-1" href="#"> <i><img class="img-rounded" src="assets/Images/profile.png" style="height: 19px; width: 19px;" />  </i>&nbsp;<span id="line">&nbsp;</span>&nbsp;Profile<i style="margin-left: 65px; font-size: 25px;" class="fa fa-fw fa-angle-right"> </i></a>
                     <ul class="dropdown-menu">
                        <li class="dropdown-item" routerLinkActive="active">
                         <a>
-                          <i class="fa fa-fw fa-download"></i> <span id="line">.</span> Download Record
+                          <i class="fa fa-fw fa-download"></i> <span id="line">&nbsp;</span> Download Record
                         </a>
                       </li>
 
@@ -226,57 +220,14 @@
 
 
 
-
-
-
-                  <li class="dropdown-item d-flex" style="padding: 0px">
-                    <a class="test" tabindex="-1">
-                      <i class="fa fa-fw fa-user"></i>Profile
-                      <i style="margin-left: 35px" class="fa fa-angle-right"></i>
-                    </a>
-                    <ul class="dropdown-menu unrLine" style="right: 212px !important; top: 0px; display: none;">
-                      <li routerLinkActive="active">
-                        <a>
-                          <i class="fa fa-fw fa-download"></i> Download Record
-                        </a>
-                      </li>
-
-                      <li routerLinkActive="active">
-                        <a>
-                          <i class="fa fa-fw fa-ban"></i> Block user
-                        </a>
-                      </li>
-                      <li routerLinkActive="active">
-                        <a routerLink="OrganizeClasses">
-                          <i class="fa fa-fw fa-calendar"></i> Organize Classes
-                        </a>
-                      </li>
-
-
-
-                      <li class="dropdown-submenu">
-                        <a class="test" href="#">Another dropdown
-                          <span></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a href="#">3rd level dropdown</a>
-                          </li>
-                          <li>
-                            <a href="#">3rd level dropdown</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-item d-flex" routerLinkActive="active" style="padding: 0px">
+                  <!-- <li class="dropdown-item" routerLinkActive="active" style="padding: 0px">
                     <a routerLink="Password">
                       <i class="fa fa-lock" aria-hidden="true"></i> Password
                     </a>
-                  </li>
-                  <li class="dropdown-item d-flex" routerLinkActive="active" style="padding: 0px">
-                    <a routerLink="ForgetPassword">
-                      <i class="fa fa-fw fa-gears"></i> Forget Password
+                  </li> -->
+                  <li class="dropdown-item" routerLinkActive="active" style="padding: 0px">
+                    <a>
+                     <i><img class="img-rounded" src="assets/Images/settings.png" style="height: 19px; width: 19px;" /></i> <span id="line">&nbsp;</span> Download Record
                     </a>
                   </li>
                   <li routerLinkActive="active" class="dropdown-item d-flex" style="padding: 0px">
