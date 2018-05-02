@@ -1,5 +1,5 @@
-<div class="container">
-  <!-- <form [formGroup]="addPeople">
+<div class="container-fluid ">
+ 
     <table class="table ">
       <thead style="background-color: #ffffff">
         <tr>
@@ -8,49 +8,46 @@
           <th>PARENT NAME</th>
           <th>CLASS CODE</th>
           <th></th>
-          <th></th>
-          <th></th>
+        
+         <th></th>
           <th>ACTIONS</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr class="student">
+        <tr class="student" *ngFor="let field of fieldArray; let i = index" id="{{i}}">
           <td>
             <div class="form-group-material">
-              <input formControlName=studentName id="studentName" type="text" name="studentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched )}">
+              <input  id="studentName" type="text" name="studentName" class="input-material " >
               <label for="studentName" class="label-material">studentName</label>
 
-              <span *ngIf="!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched && addPeople.controls['studentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
+              <!-- <span *ngIf="!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched && addPeople.controls['studentName'].value.length < 4"
+                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span> -->
 
             </div>
           </td>
           <td>
             <div class="form-group-material">
-              <input disabled formControlName=studentCode id="studentCode" type="text" name="studentCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentCode'].valid && addPeople.controls['studentCode'].touched )}">
+              <input disabled  id="studentCode" type="text" name="studentCode" class="input-material " >
               <label for="studentCode" class="label-material">@123546546</label>
 
             </div>
           </td>
           <td>
             <div class="form-group-material">
-              <input formControlName=parentName id="parentName" type="text" name="parentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched )}">
+              <input  id="parentName" type="text" name="parentName" class="input-material " >
               <label for="parentName" class="label-material">parentName</label>
 
-              <span *ngIf="!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched && addPeople.controls['parentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
+              <!-- <span *ngIf="!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched && addPeople.controls['parentName'].value.length < 4"
+                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span> -->
 
             </div>
           </td>
-          <td>
+          <td id="{{i+2}}">
             <div class="form-group-material">
-              <input formControlName=classCode id="classCode" type="text" name="classCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched )}">
+              <input  id="classCode" type="text" name="classCode" class="input-material " >
               <label for="classCode" class="label-material">classCode</label>
 
-
-              <span *ngIf="!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched && addPeople.controls['classCode'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
 
             </div>
           </td>
@@ -59,240 +56,23 @@
               <b>,</b>
             </span>
           </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode2 id="classCode2" type="text" name="classCode2" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched )}">
-              <label for="classCode2" class="label-material">classCode2</label>
-
-              <span *ngIf="!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched && addPeople.controls['classCode2'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
+          
           <td>
             <span>
-              <a>
+              <a class="btn btn-default" style="background: transparent;border: none" (click)=getRowIndex(i+2)>
                 <i class="fa fa-plus"></i>
               </a>
             </span>
           </td>
           <td>
             <span>
-              <a style="color:red;    font-size: 15px;">
-                <i class="fa fa-minus"></i> &nbsp;REMOVE</a>
+              <button style="color:red;    font-size: 15px;" (click)="deleteFieldValue(i)">
+                <i class="fa fa-minus"></i> &nbsp;REMOVE</button>
             </span>
 
           </td>
         </tr>
-        <tr class="student">
-          <td>
-            <div class="form-group-material">
-              <input formControlName=studentName id="studentName" type="text" name="studentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched )}">
-              <label for="studentName" class="label-material">studentName</label>
-
-              <span *ngIf="!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched && addPeople.controls['studentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input disabled formControlName=studentCode id="studentCode" type="text" name="studentCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentCode'].valid && addPeople.controls['studentCode'].touched )}">
-              <label for="studentCode" class="label-material">@123546546</label>
-
-        
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=parentName id="parentName" type="text" name="parentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched )}">
-              <label for="parentName" class="label-material">parentName</label>
-
-              <span *ngIf="!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched && addPeople.controls['parentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode id="classCode" type="text" name="classCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched )}">
-              <label for="classCode" class="label-material">classCode</label>
-
-
-              <span *ngIf="!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched && addPeople.controls['classCode'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <span>
-              <b>,</b>
-            </span>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode2 id="classCode2" type="text" name="classCode2" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched )}">
-              <label for="classCode2" class="label-material">classCode2</label>
-
-              <span *ngIf="!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched && addPeople.controls['classCode2'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <span>
-              <a>
-                <i class="fa fa-plus"></i>
-              </a>
-            </span>
-          </td>
-          <td>
-            <span>
-              <a style="color:red;    font-size: 15px;">
-                <i class="fa fa-minus"></i> &nbsp;REMOVE</a>
-            </span>
-
-          </td>
-        </tr>
-        <tr class="student">
-          <td>
-            <div class="form-group-material">
-              <input formControlName=studentName id="studentName" type="text" name="studentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched )}">
-              <label for="studentName" class="label-material">studentName</label>
-
-              <span *ngIf="!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched && addPeople.controls['studentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input disabled formControlName=studentCode id="studentCode" type="text" name="studentCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentCode'].valid && addPeople.controls['studentCode'].touched )}">
-              <label for="studentCode" class="label-material">@123546546</label>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=parentName id="parentName" type="text" name="parentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched )}">
-              <label for="parentName" class="label-material">parentName</label>
-
-              <span *ngIf="!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched && addPeople.controls['parentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode id="classCode" type="text" name="classCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched )}">
-              <label for="classCode" class="label-material">classCode</label>
-
-
-              <span *ngIf="!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched && addPeople.controls['classCode'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <span>
-              <b>,</b>
-            </span>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode2 id="classCode2" type="text" name="classCode2" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched )}">
-              <label for="classCode2" class="label-material">classCode2</label>
-
-              <span *ngIf="!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched && addPeople.controls['classCode2'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <span>
-              <a>
-                <i class="fa fa-plus"></i>
-              </a>
-            </span>
-          </td>
-          <td>
-            <span>
-              <a style="color:red;    font-size: 15px;">
-                <i class="fa fa-minus"></i> &nbsp;REMOVE</a>
-            </span>
-
-          </td>
-        </tr>
-        <tr class="student">
-          <td>
-            <div class="form-group-material">
-              <input formControlName=studentName id="studentName" type="text" name="studentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched )}">
-              <label for="studentName" class="label-material">studentName</label>
-
-              <span *ngIf="!addPeople.controls['studentName'].valid && addPeople.controls['studentName'].touched && addPeople.controls['studentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input disabled formControlName=studentCode id="studentCode" type="text" name="studentCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['studentCode'].valid && addPeople.controls['studentCode'].touched )}">
-              <label for="studentCode" class="label-material">@123546546</label>
-
-            
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=parentName id="parentName" type="text" name="parentName" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched )}">
-              <label for="parentName" class="label-material">parentName</label>
-
-              <span *ngIf="!addPeople.controls['parentName'].valid && addPeople.controls['parentName'].touched && addPeople.controls['parentName'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode id="classCode" type="text" name="classCode" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched )}">
-              <label for="classCode" class="label-material">classCode</label>
-
-
-              <span *ngIf="!addPeople.controls['classCode'].valid && addPeople.controls['classCode'].touched && addPeople.controls['classCode'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <span>
-              <b>,</b>
-            </span>
-          </td>
-          <td>
-            <div class="form-group-material">
-              <input formControlName=classCode2 id="classCode2" type="text" name="classCode2" class="input-material " [ngClass]="{'is-invalid ': (!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched )}">
-              <label for="classCode2" class="label-material">classCode2</label>
-
-              <span *ngIf="!addPeople.controls['classCode2'].valid && addPeople.controls['classCode2'].touched && addPeople.controls['classCode2'].value.length < 4"
-                class="help-block sub-little-text" style="color:#dc3545">please enter minimum 4 characters.</span>
-
-            </div>
-          </td>
-          <td>
-            <span>
-              <a>
-                <i class="fa fa-plus"></i>
-              </a>
-            </span>
-          </td>
-          <td>
-            <span>
-              <a style="color:red;    font-size: 15px;">
-                <i class="fa fa-minus"></i> &nbsp;REMOVE</a>
-            </span>
-
-          </td>
-        </tr>
+      
 
       </tbody>
 
@@ -301,25 +81,27 @@
 
     <div class="form-group text-center">
 
-      <button class="btn btn-defualt" style="background: transparent;border: 2px slategrey solid;margin-bottom: 10px;width: 130px;  ">
-      + Add People</button>
+      <button class="btn btn-defualt" style="background: transparent;border: 2px slategrey solid;margin-bottom: 10px;width: 130px;  "
+       (click)="addFieldValue()">
+      Add People</button>
       <br>
-      <button [disabled]="!loginForm.valid" type="submit" id="login" class="btn btn-primary" style=" border :none;background-color: #f76149 ;width: 130px;border-radius: 4px;">SUBMIT</button>
+      <button type="submit" id="login" class="btn btn-primary" style=" border :none;background-color: #f76149 ;width: 130px;border-radius: 4px;">SUBMIT</button>
 
     </div>
-  </form> -->
-
-  <table class="table table-striped table-bordered">
+ 
+ 
+  <!-- <table class="table table-striped table-bordered">
       <thead>
           <tr>
               <th>Code</th>
               <th>Name</th>
               <th>Price</th>
               <th>Action</th>
+              <th></th>
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let field of fieldArray; let i = index">
+          <tr *ngFor="let field of fieldArray; let i = index" >
               <td>
                   <input [(ngModel)]="field.code" class="form-control" type="text" name="{{field.code}}" />
               </td>
@@ -332,8 +114,14 @@
               <td>
                   <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
               </td>
+
+              <td (click)=getRowIndex(i)>
+              <button class="btn btn-primary">  +</button>
+              </td>
+             
           </tr>
           <tr>
+             
               <td>
                   <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode" />
               </td>
@@ -343,11 +131,12 @@
               <td>
                   <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.price" name="newAttributePrice" />
               </td>
+              <td>  </td>
               <td>
                   <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
               </td>
           </tr>
       </tbody>
-  </table>
-  t
+  </table> -->
+  
 </div>
