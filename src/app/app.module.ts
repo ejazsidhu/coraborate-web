@@ -17,12 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { ConfigService } from './_services/config/config.service';
-<<<<<<< HEAD
+
 import { AddPeopleComponent } from './_pages/general_pages/add-people/add-people.component';
-=======
+
 import { PasswordComponent } from './_pages/general-dahboard/password/password.component';
 import { NavbarService } from './_pages/general_pages/navbar/navbar.service';
->>>>>>> 242b25f... 90 % dropdown done
+
 
 
 @NgModule({
@@ -32,15 +32,11 @@ import { NavbarService } from './_pages/general_pages/navbar/navbar.service';
     LoginComponent,
     GeneralDahboardComponent,
     JoinSchoolComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     AddPeopleComponent
-=======
+,
     PasswordComponent
->>>>>>> 242b25f... 90 % dropdown done
-=======
-  
->>>>>>> 4b2899a... 90 % dropdown done
+
   ],
   imports: [
     BrowserModule,
