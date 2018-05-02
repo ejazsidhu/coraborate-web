@@ -37,4 +37,28 @@ export class NavbarComponent implements OnInit {
 
   }
 
+//    myFunction() {
+//     var x = document.getElementById("myDIV");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// }
+
+showHeading(e){
+
+  console.log('mouser enter')
+  console.log(e)
+  var x = document.getElementById("meaageDiv");
+  if (x.style.display === "none") {
+      x.style.display = "block";
+      x.innerHTML=e
+  } else {
+      x.style.display = "none";
+      
+  }
+
+}
+
 }

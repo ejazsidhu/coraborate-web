@@ -54,11 +54,30 @@
    
    <script> $(document).ready(function()
    {
-  
+   
      
-     $('.dropdown-item a.test').hover( function(e){$(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); });
+     $('a.test').click( function(e){
+       console.log('this is hover')
+       $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); });
     // $('.dropdown-item a.test').mouseout( function(e){ $(this).next('ul').hide(); e.stopPropagation(); e.preventDefault(); });     
     });
+
+    // $('.menu-btn').click(function(){
+
+    //   console.log('hidle heading');
+
+    //   $('.heading').hide();
+
+    // });
+
+
+    
+        $('#toggle-btn').click(function(){
+          $('.myDIV').hide();
+        })
+
+        
+    
     
      </script>
 </body>
