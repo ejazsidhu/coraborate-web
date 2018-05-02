@@ -33,8 +33,11 @@ import { NavbarService } from './_pages/general_pages/navbar/navbar.service';
     GeneralDahboardComponent,
     JoinSchoolComponent,
 
+
     AddPeopleComponent
 ,
+    AddPeopleComponent,
+
     PasswordComponent
 
   ],
