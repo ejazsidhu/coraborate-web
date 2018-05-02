@@ -21,9 +21,9 @@
     <div class="main-menu">
       <br>
 
-      <ul *ngIf="ClassView" id="side-main-menu" class="side-menu list-unstyled">
+      <ul  id="side-main-menu" class="side-menu list-unstyled">
         <li class="header">
-          <b>CREATED CLASSES</b>
+          <b class="myDIV">CREATED CLASSES</b>
 
 
           <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus" style="margin-left: 50px; color:gray"></i>
@@ -40,12 +40,12 @@
             <span>123 39 </span>
           </a>
         </li>
-        <li routerLinkActive="active" *ngFor="let item of ClassView.OwnClassess">
+        <li routerLinkActive="active" >
           <a class="">
             <i>
               <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
             </i>
-            {{item.OwnClassName}}
+            <!-- {{item.OwnClassName}} -->
             <!-- {{item.OwnClassName}} {{item.OwnClassId}} -->
           </a>
 
@@ -53,18 +53,23 @@
 
       </ul>
 
-      <ul *ngIf="ClassView" id="side-main-menu" class="side-menu list-unstyled">
-        <li class="header">
+      <ul  id="side-main-menu" class="side-menu list-unstyled">
+        <li  class="header">
 
-          <b>JOINED CLASSES</b>
-          <i data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus" style="margin-left: 65px; color:gray"></i>
+          <b class="myDIV" class="heading">JOINED CLASSES</b>
+          <i (mouseenter)="showHeading('Joined Classess')"  data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus" ></i>
         </li>
-        <li routerLinkActive="active" *ngFor="let item of ClassView.JoinClassess">
+        <div id="meaageDiv" style="display:none">
+
+        </div>
+
+        
+        <li routerLinkActive="active" >
           <a class="">
             <i>
               <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
             </i>
-            {{item.JoinClassName}}
+            <!-- {{item.JoinClassName}} -->
             <!-- {{item.JoinClassName}} {{item.JoinClassId}} -->
           </a>
 
@@ -104,167 +109,109 @@
 <div class="page">
   <!-- navbar-->
   <header class="header">
-    <nav class="navbar" style="height: 85px;background: fff;">
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-holder d-flex align-items-center justify-content-between">
           <div class="navbar-header">
-            <a style="background-color: transparent" id="toggle-btn" href="#" class="menu-btn">
-              <i style="
-              color:  black;
-              font-size: 25px;
-              font-weight:  bold;
-          " class="fas fa-bars"> </i>
+            <a id="toggle-btn" href="#" class="menu-btn" >
+              <i class="fa fa-bars" style="background: transparent;color:black"> </i>
             </a>
-            <a href="index.html" class="navbar-brand">
+            <!-- <a href="index.html" class="navbar-brand">
               <div class="brand-text d-none d-md-inline-block">
-               
+                <span>Bootstrap </span>
+                <strong class="text-primary">Dashboard</strong>
               </div>
-            </a>
+            </a> -->
           </div>
           <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-            <!-- Notifications dropdown-->
-            <!-- <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification d-flex justify-content-between">
-                        <div class="notification-content"><i class="fa fa-envelope"></i>You have 6 new messages </div>
-                        <div class="notification-time"><small>4 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification d-flex justify-content-between">
-                        <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                        <div class="notification-time"><small>4 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification d-flex justify-content-between">
-                        <div class="notification-content"><i class="fa fa-upload"></i>Server Rebooted</div>
-                        <div class="notification-time"><small>4 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification d-flex justify-content-between">
-                        <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                        <div class="notification-time"><small>10 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
-                </ul>
-              </li> -->
+
             <!-- Messages dropdown-->
-            <!-- <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="assets/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="assets/img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="assets/img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
-                </ul>
-              </li> -->
-            <!-- Languages dropdown    -->
-            <li class="nav-item dropdown" style="width: 210px;">
-              <!-- <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                class="nav-link language dropdown-toggle"> -->
-
-              <img src="assets/img/avatar-1.jpg" style="width:64px ;height: 64px; position: relative; top: 12px;" alt="English" class="img-fluid rounded-circle">
-            <span style="color: #8e8e8e; margin-left: 10px; font-family: Montserrat;">Good Afternoon,</span>  
-              <div style="margin-left: 79px; position: relative; top: -26px;font-family: Montserrat; font-weight: bold;">Mr.Usman Shah</div>
-              
-              <!-- {{ClassView.UserName}} -->
-              <!-- </a> -->
-
-              <li class="nav-item dropdown">
-                <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                  class="nav-link">
-                  <i class="fa fa-sort-desc fa-2x" style="color: black;" aria-hidden="true"></i>
-                </a>
-                <ul aria-labelledby="notifications" class="dropdown-menu unrLine">
-                
-                  <li class="dropdown-submenu">
-                   <a class="dropdown-item" style="border-top: 0px !important" tabindex="-1" href="#"> <i><img class="img-rounded" src="assets/Images/profile.png" style="height: 19px; width: 19px;" />  </i>&nbsp;<span id="line">&nbsp;</span>&nbsp;Profile<i style="margin-left: 65px; font-size: 25px;" class="fa fa-fw fa-angle-right"> </i></a>
-                    <ul class="dropdown-menu">
-                       <li class="dropdown-item" routerLinkActive="active">
-                        <a>
-                          <i class="fa fa-fw fa-download"></i> <span id="line">&nbsp;</span> Download Record
-                        </a>
-                      </li>
-
-                      <li class="dropdown-item" routerLinkActive="active">
-                        <a>
-                          <i class="fa fa-fw fa-ban"></i> Block user
-                        </a>
-                      </li>
-                      <li class="dropdown-item" routerLinkActive="active">
-                        <a routerLink="OrganizeClasses">
-                          <i class="fa fa-fw fa-calendar"></i> Organize Classes
-                        </a>
-                      </li>
-                      <li class="dropdown-item" routerLinkActive="active">
-                        <a routerLink="Password">
-                          <i class="fa fa-lock" aria-hidden="true"></i> Password
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+            <li class="nav-item dropdown">
+              <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                class="nav-link">
+                <img src="assets/img/avatar-1.jpg" style="width:50px ;height: 50px; position: relative; top: 12px;" alt="English" class="img-fluid rounded-circle">
+                <span style="color: #8e8e8e; margin-left: 10px; font-family: Montserrat;">Good Afternoon,</span>
+                <div style="margin-left: 68px; position: relative; top: -26px;font-family: Montserrat; font-weight: bold;">Mr.Usman Shah
+                  <i class="fa fa-sort-desc fa-2x"></i>
+                </div>
 
 
 
+              </a>
+              <ul aria-labelledby="notifications" class="dropdown-menu">
+                <li>
+                  <a rel="nofollow" class="dropdown-item test d-flex">
+                    <div class="msg-profile">
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <div class="msg-body">
+                      <h3 class="h5">Profile</h3>
+
+                    </div>
+                  </a>
+
+                  <ul class="dropdown-submenu custome-sb-menu">
+                    <li>
+                      <a rel="nofollow" class="dropdown-item d-flex">
+                        <div class="msg-profile">
+                          <i class="fa fa-user"></i>
+                        </div>
+
+                        <div class="msg-body">
+                          <h3 class="h5">Profile</h3>
+
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a rel="nofollow" class="dropdown-item d-flex">
+                        <div class="msg-profile">
+                          <i class="fa fa-user"></i>
+                        </div>
+
+                        <div class="msg-body">
+                          <h3 class="h5">Profile</h3>
+
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a rel="nofollow" class="dropdown-item d-flex">
+                    <div class="msg-profile">
+                      <i class="fa fa-user"></i>
+                    </div>
+
+                    <div class="msg-body">
+                      <h3 class="h5">Profile</h3>
+
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a rel="nofollow" class="dropdown-item d-flex">
+                    <div class="msg-profile">
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <div class="msg-body">
+                      <h3 class="h5">Profile</h3>
+
+                    </div>
+                  </a>
+                </li>
 
 
+              </ul>
+            </li>
 
-                  <!-- <li class="dropdown-item" routerLinkActive="active" style="padding: 0px">
-                    <a routerLink="Password">
-                      <i class="fa fa-lock" aria-hidden="true"></i> Password
-                    </a>
-                  </li> -->
-                  <li class="dropdown-item" routerLinkActive="active" style="padding: 0px">
-                    <a>
-                     <i><img class="img-rounded" src="assets/Images/settings.png" style="height: 19px; width: 19px;" /></i> <span id="line">&nbsp;</span> Download Record
-                    </a>
-                  </li>
-                  <li routerLinkActive="active" class="dropdown-item d-flex" style="padding: 0px">
-                    <a routerLink="Help">
-                      <i class="fa fa-fw fa-info-circle"></i> Help Center
-                    </a>
-                  </li>
-                  <li routerLinkActive="active" class="dropdown-item d-flex" style="border-bottom: 0px solid !important; padding: 0px;">
-                    <a>
-                      <i class="fa fa-fw fa-power-off"></i>Log out
-                    </a>
-                  </li>
-                  <!-- </ul> -->
-                  <!-- <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="assets/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="assets/img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="assets/img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li> -->
-                </ul>
-                <!-- <ul>
-                  <li>ibrahim</li>
-                </ul> -->
-              </li>
-              <!-- </li> -->
-              <!-- Log out-->
-              <!-- <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li> -->
+            <!-- Log out-->
+            <!-- <li class="nav-item">
+              <a href="login.html" class="nav-link logout">
+                <span class="d-none d-sm-inline-block">Logout</span>
+                <i class="fa fa-sign-out"></i>
+              </a>
+            </li> -->
           </ul>
         </div>
       </div>
