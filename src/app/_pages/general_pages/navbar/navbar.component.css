@@ -4,6 +4,12 @@
     right:40px;
     top:10px;
 }
+.line{
+    border-left:1px solid;
+    margin-left:-15px;
+    margin-right: 15px;
+    height: 40px;
+}
 
 .image{
     position:relative;
