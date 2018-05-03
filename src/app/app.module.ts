@@ -22,6 +22,7 @@ import { AddPeopleComponent } from './_pages/general_pages/add-people/add-people
 
 import { PasswordComponent } from './_pages/general-dahboard/password/password.component';
 import { NavbarService } from './_pages/general_pages/navbar/navbar.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -49,6 +50,7 @@ import { NavbarService } from './_pages/general_pages/navbar/navbar.service';
     Router,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule.forRoot()
 
   ],
   providers: [EmailValidator, ConfigService, NavbarService],
