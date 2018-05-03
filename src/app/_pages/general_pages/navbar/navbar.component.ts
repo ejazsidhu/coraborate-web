@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from './navbar.service';
 import { IClassesViews } from '../../../_models/ClassesViews';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',

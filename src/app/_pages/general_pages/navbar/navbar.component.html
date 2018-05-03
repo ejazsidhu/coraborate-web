@@ -24,7 +24,7 @@
       <ul id="side-main-menu" class="side-menu list-unstyled">
         <li *ngIf="show">
           <b class="header2">CREATED CLASSES</b>
-          <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png" class="add-plus-button">
+          <img data-toggle="modal" data-target="#ClassesJoined"    src="../../../../assets/icons/add-plus-button.png" class="add-plus-button">
           <!-- <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus"></i> -->
         </li>
         <!-- <div *ngIf=showToastTrigger class="alert alert-success alert-dismissible fade show" role="alert">
@@ -33,12 +33,13 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div> -->
+      
         <li *ngIf="!show">
           <!-- (mouseenter)="showToast()" -->
-         
-          <a data-toggle="tooltip" title="CREATED CLASSES">
+       
+          <a >
            
-            <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png"
+            <img placement="right" ngbTooltip="Tooltip on right" data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png"
             [ngClass]="{'add-plus-button':show}">
  
           </a>
@@ -54,6 +55,7 @@
                 <img src="../../../../assets/Images/chemistry.PNG" style=" border-radius:50% ;width: 40px;;">
               </span>
             </i>
+            <b *ngIf="show" class="header3">Chemistry 6th c</b>
             <!-- <span>123 39 </span> -->
           </a>
         </li>
@@ -62,6 +64,7 @@
             <i>
               <img src="assets/Images/tech.svg" style="width: 40px;border-radius: 50%;" />
             </i>
+            <b *ngIf="show" class="header3">SCHOOL</b>
             <!-- {{item.OwnClassName}} -->
             <!-- {{item.OwnClassName}} {{item.OwnClassId}} -->
           </a>
@@ -94,7 +97,7 @@
             <i>
               <img src="assets/Images/tech.svg" style="width: 40px;border-radius: 50%;" />
             </i>
-            <strong *ngIf="show">10th b artASDFADSF</strong>
+            <b *ngIf="show" class="header3">SCHOOL</b>
             <!-- {{item.JoinClassName}} -->
             <!-- {{item.JoinClassName}} {{item.JoinClassId}} -->
           </a>
@@ -106,11 +109,13 @@
         <li *ngIf="show">
 
           <b class="header2">SCHOOL</b>
-          <i data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus"></i>
+          <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png" class="add-plus-button">
+          <!-- <i data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus"></i> -->
         </li>
         <li *ngIf="!show">
           <a data-toggle="tooltip" title="SCHOOL">
-            <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus"></i>
+              <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png" [ngClass]="{'add-plus-button':show}">
+            <!-- <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus"></i> -->
           </a>
 
 
@@ -145,7 +150,7 @@
               <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link">
                 <img src="assets/img/avatar-1.jpg" style="width:50px ;height: 50px; position: relative; top: 12px;" alt="English" class="img-fluid rounded-circle">
-                <span style="color: #8e8e8e; margin-left: 10px; font-family: Montserrat;">Good Afternoon,</span>
+                <span style="color: #8e8e8e; margin-left: 15px; font-family: Montserrat;">Good Afternoon,</span>
                 <div style="margin-left: 68px; position: relative; top: -26px;font-family: Montserrat; font-weight: bold;">Mr.Usman Shah
                   <i style=" margin-left: 20px; " class="fa fa-sort-desc fa-2x"></i>
                 </div>

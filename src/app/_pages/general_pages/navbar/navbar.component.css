@@ -26,6 +26,20 @@
     text-align: left;
     color: #f76149;
 }
+.header3{
+    width: 134px;
+  height: 18px;
+  mix-blend-mode: undefined;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
 .line{
     border-left:1px solid;
     margin-left:-15px;
