@@ -8,14 +8,20 @@ import { IClassesViews } from '../../../_models/ClassesViews';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  show: any=true;
+  showToastTrigger=false;
   ClassView: IClassesViews;
   constructor(private ns: NavbarService) { }
 
   ngOnInit() {
-    console.log("imalive")
-    this.GetAllClassesFun();
+    // console.log("imalive")
+    // this.GetAllClassesFun();
 
 
+  }
+
+  showToast(){
+this.showToastTrigger=!this.showToastTrigger;
   }
 
   GetAllClassesFun() {
@@ -35,6 +41,11 @@ export class NavbarComponent implements OnInit {
         console.log(error);
       });
 
+  }
+
+  toggleHeading(){
+
+    this.show=!this.show;
   }
 
 //    myFunction() {

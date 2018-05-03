@@ -52,9 +52,13 @@
    <script src="assets/js/front.js"></script>
 
    
-   <script> $(document).ready(function()
+   <script>
+    $(document).ready(function()
    {
-   
+    // $('[data-toggle="tooltip"]').tooltip(); 
+
+     $("a").tooltip();
+
      
      $('a.test').click( function(e){
        console.log('this is hover')

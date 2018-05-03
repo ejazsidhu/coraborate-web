@@ -5,45 +5,62 @@
     <div class="sidenav-header d-flex align-items-center justify-content-center" style="background: #F76148">
       <!-- User Info-->
       <div class="sidenav-header-inner text-center">
-        <img src="assets/Images/Caraborate.png" alt="" style="width: 150px;height: 100px; text-align: center">
+        <img src="assets/Images/logo.png" alt="" style=" width: 100%; text-align: center">
         <!-- <img src="assets/img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle"> -->
         <!-- <h2 class="h5">Anderson Hardy</h2><span>Web Developer</span> -->
       </div>
       <!-- Small Brand information, appears on minimized sidebar-->
-      <div class="sidenav-header-logo">
+      <div class="sidenav-header-logo" style="height:87px">
         <!--        <strong>B</strong><strong class="text-primary">D</strong> -->
         <a href="index.html" class="brand-small text-center">
-          <img src="assets/Images/withoutTexLogo.png" alt="" style="width: 50px;height: 50px"> </a>
+          <img src="assets/Images/withoutTexLogo.png" alt="" style="width: 50px;height: 50px;margin-top:15px"> </a>
 
       </div>
     </div>
     <!-- Sidebar Navigation Menus-->
-    <div class="main-menu">
+    <div [ngClass]="{'main-menu':!show,'main-menu-padding':show}">
       <br>
 
-      <ul  id="side-main-menu" class="side-menu list-unstyled">
-        <li class="header">
-          <b class="myDIV">CREATED CLASSES</b>
+      <ul id="side-main-menu" class="side-menu list-unstyled">
+        <li *ngIf="show">
+          <b class="header2">CREATED CLASSES</b>
+          <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png" class="add-plus-button">
+          <!-- <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus"></i> -->
+        </li>
+        <!-- <div *ngIf=showToastTrigger class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+        <li *ngIf="!show">
+          <!-- (mouseenter)="showToast()" -->
+         
+          <a data-toggle="tooltip" title="CREATED CLASSES">
+           
+            <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png"
+            [ngClass]="{'add-plus-button':show}">
+ 
+          </a>
 
 
-          <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus" style="margin-left: 50px; color:gray"></i>
         </li>
 
         <li class="active">
 
-          <a href="/app/Message/39">
+          <a>
             <i class="">
               <span>
-                <img src="../Content/Images/tech.svg" style="width: 26px;border-radius: 50%;">
+                <img src="../../../../assets/Images/chemistry.PNG" style=" border-radius:50% ;width: 40px;;">
               </span>
             </i>
-            <span>123 39 </span>
+            <!-- <span>123 39 </span> -->
           </a>
         </li>
-        <li routerLinkActive="active" >
+        <li routerLinkActive="active">
           <a class="">
             <i>
-              <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
+              <img src="assets/Images/tech.svg" style="width: 40px;border-radius: 50%;" />
             </i>
             <!-- {{item.OwnClassName}} -->
             <!-- {{item.OwnClassName}} {{item.OwnClassId}} -->
@@ -53,32 +70,56 @@
 
       </ul>
 
-      <ul  id="side-main-menu" class="side-menu list-unstyled">
-        <li  class="header">
+      <ul id="side-main-menu" class="side-menu list-unstyled">
+        <li *ngIf="show">
 
-          <b class="myDIV" class="heading">JOINED CLASSES</b>
-          <i (mouseenter)="showHeading('Joined Classess')"  data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus" ></i>
+          <b class="header2">JOINED CLASSES</b>
+          <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png" class="add-plus-button">
+          <!-- <i data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus"></i> -->
         </li>
-        <div id="meaageDiv" style="display:none">
+        <li *ngIf="!show">
+          <a data-toggle="tooltip" title="JOINED CLASSES">
+            <img data-toggle="modal" data-target="#ClassesJoined" src="../../../../assets/icons/add-plus-button.png" [ngClass]="{'add-plus-button':show}">
 
-        </div>
+            <!-- <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus"></i> -->
+          </a>
 
-        
-        <li routerLinkActive="active" >
+
+        </li>
+
+
+
+        <li routerLinkActive="active">
           <a class="">
             <i>
-              <img src="assets/Images/tech.svg" style="width: 26px;border-radius: 50%;" />
+              <img src="assets/Images/tech.svg" style="width: 40px;border-radius: 50%;" />
             </i>
+            <strong *ngIf="show">10th b artASDFADSF</strong>
             <!-- {{item.JoinClassName}} -->
             <!-- {{item.JoinClassName}} {{item.JoinClassId}} -->
           </a>
 
         </li>
 
+        <hr>
+
+        <li *ngIf="show">
+
+          <b class="header2">SCHOOL</b>
+          <i data-toggle="modal" data-target="#ClassesJoined" class="fas fa-plus"></i>
+        </li>
+        <li *ngIf="!show">
+          <a data-toggle="tooltip" title="SCHOOL">
+            <i data-toggle="modal" data-target="#CreateClass" class="fas fa-plus"></i>
+          </a>
+
+
+        </li>
+
       </ul>
-      
+
     </div>
-    </div>
+  </div>
 </nav>
 <div class="page">
   <!-- navbar-->
@@ -87,8 +128,8 @@
       <div class="container-fluid">
         <div class="navbar-holder d-flex align-items-center justify-content-between">
           <div class="navbar-header">
-            <a id="toggle-btn" href="#" class="menu-btn" >
-              <i class="fa fa-bars" style="background: transparent;color:black"> </i>
+            <a id="toggle-btn" href="#" class="menu-btn" (click)="toggleHeading()">
+              <i class="fa fa-bars fa-2x" style="background: transparent;color:black;margin-left: -30px;"> </i>
             </a>
             <!-- <a href="index.html" class="navbar-brand">
               <div class="brand-text d-none d-md-inline-block">
@@ -106,7 +147,7 @@
                 <img src="assets/img/avatar-1.jpg" style="width:50px ;height: 50px; position: relative; top: 12px;" alt="English" class="img-fluid rounded-circle">
                 <span style="color: #8e8e8e; margin-left: 10px; font-family: Montserrat;">Good Afternoon,</span>
                 <div style="margin-left: 68px; position: relative; top: -26px;font-family: Montserrat; font-weight: bold;">Mr.Usman Shah
-                  <i class="fa fa-sort-desc fa-2x"></i>
+                  <i style=" margin-left: 20px; " class="fa fa-sort-desc fa-2x"></i>
                 </div>
 
 
@@ -120,8 +161,12 @@
                     </div>
                     <div class="line">&nbsp;</div>
                     <div class="msg-body">
-                      <h3 class="h5">Profile</h3>
+                      <h3 class="h5">Profile </h3>
 
+
+                    </div>
+                    <div style="margin-left: 65px; font-size: 25px;">
+                      <i class="fa fa-fw fa-angle-right"></i>
                     </div>
                   </a>
 
